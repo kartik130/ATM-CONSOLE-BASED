@@ -45,10 +45,13 @@ while True:
         if accno not in accounts:
             print("Account does not Exist")
         else:
-            amt = int(input("Enter Amount to Deposit: "))
-            accounts[accno][-2] += amt
-            print("Deposit Sucessfull")
-        print("**********************")
+            pin = int(input("Enter pin: "))
+            if accounts[accno][-1] !=pin:
+                print("Invalid Pin")
+            else:
+                amt = int(input("Enter Amount to Deposit: "))
+                accounts[accno][-2] += amt
+                print("Deposit Sucessfull")
     elif option == 3:
         print("**********************")
         accno = int(input("Enter Account Number: "))
